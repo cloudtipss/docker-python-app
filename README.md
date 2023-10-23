@@ -29,8 +29,6 @@ Best practice is to try to start with a minimum size image and add only componen
     docker build -t fast-api:v1 ./
     docker run -p 80:80 fast-api:v1
 
-
-
 # Dockerise python Flask Docker app
 
     cd flask-docker
@@ -39,15 +37,26 @@ Best practice is to try to start with a minimum size image and add only componen
 
 
 
-# Install Django admin
-
-    django-admin --version
+# How to start a new Django Project
+### Install django-admin 
+    pip3 install django
     django-admin --version
     django-admin startproject django_project .
     python3 manage.py runserver
 
+Notes: 
+
+- update your port in manage.py (default is using 8000)
+
+    from django.core.management.commands.runserver import Command as runserver
+    runserver.default_port = "8080"
+    
+- add Allowed hosts in settings.py file  in django_project folder
+    ALLOWED_HOSTS = ['0.0.0.0']
+
+# Dockerise python Django Docker app
 
     cd django-docker
-    docker build -tdjango-docker:v1 ./
+    docker build -t django-docker:v1 ./
     docker run -p 8080:8080 django-docker:v1
  
