@@ -1,0 +1,4 @@
+
+gunicorn>=19,<20
+Django==3.2.13
+environs==7.3.1
