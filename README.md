@@ -54,6 +54,8 @@ Notes:
 - add Allowed hosts in settings.py file  in django_project folder
     ALLOWED_HOSTS = ['0.0.0.0']
 
+- Update the Secure Key in  SECRET_KEY if re-using the code form this example
+
 # Dockerise python Django Docker app
 
     cd django-docker
